@@ -4,10 +4,10 @@ import org.junit.jupiter.api.Test;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
-public class WebFluxTest {
+class WebFluxTest {
 
   @Test
-  public void testMono() {
+  void testMono() {
     Mono<Object> mono =
         Mono.just("Single Value").then(Mono.error(new RuntimeException("Exception"))).log();
 
@@ -15,7 +15,7 @@ public class WebFluxTest {
   }
 
   @Test
-  public void testFlux() {
+  void testFlux() {
     Flux<String> flux =
         Flux.just("Item#1", "Item#2", "Item#3")
             .concatWithValues("Item#4", "Item#5")
